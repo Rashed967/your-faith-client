@@ -6,7 +6,6 @@ export default function Main() {
   return (
     <>
     <NavBar></NavBar>
-    <div>Main page</div>
     <Outlet></Outlet>
     </>
   )
