@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import chain from '../../../assets/images/chain.png'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../../../firebase/firebase'
 
 export default function Home() {
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if(user){
+        const userId = user.uid;
+        console.log(userId)
+      }
+      else{
+        console.log("user not found")
+      }
+    })
+  })
   return (
     <>
 
